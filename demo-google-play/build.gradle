@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "nl.dionsegijn.confettiattempt"
         minSdkVersion 16
@@ -22,9 +21,10 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-    lintOptions {
+    namespace 'nl.dionsegijn.konfettidemo'
+    lint {
         abortOnError true
-        baseline file("lint-baseline.xml")
+        baseline file('lint-baseline.xml')
     }
 }
 
